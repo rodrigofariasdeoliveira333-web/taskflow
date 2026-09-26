@@ -1,0 +1,291 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #222;
+}
+
+/* CABEÇALHO */
+
+header {
+    background-color: #5b3cc4;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 8px;
+}
+
+/* CONTEÚDO */
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.intro {
+    margin-bottom: 20px;
+}
+
+.intro h2 {
+    margin-bottom: 5px;
+}
+
+/* FORMULÁRIO */
+
+.task-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.task-form h2 {
+    margin-bottom: 20px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 15px;
+    align-items: end;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input,
+select {
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: white;
+}
+
+.add-button {
+    padding: 11px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5b3cc4;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #472ca3;
+}
+
+/* CONTADORES */
+
+.counters {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.counter {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.counter strong {
+    display: block;
+    font-size: 28px;
+    color: #5b3cc4;
+    margin-bottom: 5px;
+}
+
+/* FILTROS */
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter,
+.clear-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter {
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
+.filter.active {
+    background-color: #5b3cc4;
+    color: white;
+}
+
+.clear-button {
+    background-color: #333;
+    color: white;
+}
+
+/* LISTA DE TAREFAS */
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.task {
+    background-color: white;
+    border-radius: 8px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-left: 5px solid #5b3cc4;
+}
+
+.check-button {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid #5b3cc4;
+    background-color: white;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.task.completed .check-button {
+    background-color: #5b3cc4;
+}
+
+.task-info {
+    flex: 1;
+}
+
+.task-title {
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.task.completed .task-title {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-details {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    background-color: #eee;
+}
+
+.priority-alta {
+    background-color: #ffd6d6;
+    color: #b00000;
+}
+
+.priority-media {
+    background-color: #fff0c2;
+    color: #856404;
+}
+
+.priority-baixa {
+    background-color: #d8f3dc;
+    color: #176b2c;
+}
+
+.delete-button {
+    border: none;
+    background-color: #e53935;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #c62828;
+}
+
+/* ESTADO VAZIO */
+
+.empty-state {
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+    color: #777;
+}
+
+/* RODAPÉ */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+    background-color: #333;
+    color: white;
+}
+
+/* CELULAR */
+
+@media (max-width: 800px) {
+
+    form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    main {
+        width: 94%;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    .counters {
+        grid-template-columns: 1fr;
+    }
+
+    .task {
+        align-items: flex-start;
+    }
+
+    .delete-button {
+        padding: 7px;
+    }
+
+}

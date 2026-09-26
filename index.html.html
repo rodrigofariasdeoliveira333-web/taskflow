@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Tarefas Escolares</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>TaskFlow</h1>
+        <p>Organize suas tarefas escolares</p>
+    </header>
+
+    <main>
+
+        <section class="intro">
+            <h2>Minhas tarefas</h2>
+            <p>Adicione e organize suas atividades por matéria.</p>
+        </section>
+
+        <!-- FORMULÁRIO -->
+        <section class="task-form">
+            <h2>Adicionar tarefa</h2>
+
+            <form id="taskForm">
+
+                <div class="form-group">
+                    <label for="taskInput">Tarefa</label>
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="Ex: Fazer atividade de matemática"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="subjectInput">Matéria</label>
+
+                    <select id="subjectInput" required>
+                        <option value="">Escolha uma matéria</option>
+                        <option value="Matemática">Matemática</option>
+                        <option value="Português">Português</option>
+                        <option value="História">História</option>
+                        <option value="Geografia">Geografia</option>
+                        <option value="Biologia">Biologia</option>
+                        <option value="Química">Química</option>
+                        <option value="Física">Física</option>
+                        <option value="Inglês">Inglês</option>
+                        <option value="Filosofia">Filosofia</option>
+                        <option value="Sociologia">Sociologia</option>
+                        <option value="Educação Física">Educação Física</option>
+                        <option value="Outra">Outra</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="priorityInput">Prioridade</label>
+
+                    <select id="priorityInput">
+                        <option value="Baixa">Baixa</option>
+                        <option value="Média" selected>Média</option>
+                        <option value="Alta">Alta</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="dateInput">Data de entrega</label>
+
+                    <input type="date" id="dateInput">
+                </div>
+
+                <button type="submit" class="add-button">
+                    Adicionar tarefa
+                </button>
+
+            </form>
+        </section>
+
+        <!-- CONTADORES -->
+        <section class="counters">
+
+            <div class="counter">
+                <strong id="totalCount">0</strong>
+                <span>Total</span>
+            </div>
+
+            <div class="counter">
+                <strong id="pendingCount">0</strong>
+                <span>Pendentes</span>
+            </div>
+
+            <div class="counter">
+                <strong id="completedCount">0</strong>
+                <span>Concluídas</span>
+            </div>
+
+        </section>
+
+        <!-- FILTROS -->
+        <section class="filters">
+
+            <button class="filter active" data-filter="todas">
+                Todas
+            </button>
+
+            <button class="filter" data-filter="pendentes">
+                Pendentes
+            </button>
+
+            <button class="filter" data-filter="concluidas">
+                Concluídas
+            </button>
+
+            <button id="clearCompleted" class="clear-button">
+                Limpar concluídas
+            </button>
+
+        </section>
+
+        <!-- LISTA DE TAREFAS -->
+        <section>
+
+            <div id="taskList" class="task-list"></div>
+
+            <div id="emptyState" class="empty-state">
+                <p>Nenhuma tarefa cadastrada.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>TaskFlow - Organizador de tarefas escolares</p>
+    </footer>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
